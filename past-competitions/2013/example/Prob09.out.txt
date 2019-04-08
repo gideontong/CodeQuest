@@ -1,0 +1,2 @@
+Set 1: Mean=3.3, Median=3.5, Mode=5
+Set 2: Mean=1.8, Median=2, Mode=1,2

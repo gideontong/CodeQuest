@@ -1,0 +1,16 @@
+3
+East High School
+2
+Jared:A4,B3,C1,A2,C4,A2,B4
+Lauren:B4,A4,A3,A1,C4,C2,A3,A4
+North High School
+4
+John:D1,A2,A4,A3,A4,C2,A4,C2
+Paul:B4,B3,B4,A4,A2,A4,C1
+George:A3,A4,C1,C2,B4,A1
+Ringo:A4,B4,A3,B3,A2,B2
+West High School
+3
+Emma:A3,B4,B4,A4,A4,A3,C1,A3,A1
+Matt:C4,A4,A4,A3,A2,A2,A1
+Katie:A1,A3,A3,B4,A4,A3,C2,A4

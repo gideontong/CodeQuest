@@ -1,0 +1,13 @@
+1
+6 7
+A D E K H E Q
+B X E H K J R
+J I L O C K D
+R P I G N A H
+T E N E F H M
+J U O P L N T
+4
+LOCKHEED
+PLANE
+JET
+ENGINE

@@ -1,0 +1,13 @@
+12
+red
+red-violet
+violet
+blue-violet
+blue
+blue-green
+green
+yellow-green
+yellow
+yellow-orange
+orange
+red-orange

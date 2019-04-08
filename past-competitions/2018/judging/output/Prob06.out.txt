@@ -1,0 +1,16 @@
+red red
+green green
+blue green
+off blue
+green off
+red off
+blue red
+blue blue
+off off
+off green
+red blue
+green red
+red green
+green blue
+blue off
+off red

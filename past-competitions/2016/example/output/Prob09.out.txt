@@ -1,0 +1,3 @@
+http://tile.openstreetmap.org/13/1702/3114.png
+http://tile.openstreetmap.org/16/19288/24645.png
+http://tile.openstreetmap.org/15/30147/19662.png

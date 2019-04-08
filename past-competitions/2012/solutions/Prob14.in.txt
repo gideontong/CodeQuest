@@ -1,0 +1,128 @@
+Cocoa Beach;CodeQuestVille
+Boca Raton;CodeQuestVille;1
+Bradenton;CodeQuestVille;2
+Clearwater;CodeQuestVille;3
+Daytona Beach;CodeQuestVille;5
+Ft. Lauderdale;CodeQuestVille;6
+Ft. Myers;CodeQuestVille;7
+Ft. Pierce;CodeQuestVille;8
+Gainesville;CodeQuestVille;9
+Jacksonville;CodeQuestVille;10
+Key West;CodeQuestVille;11
+Kissimmee;CodeQuestVille;12
+Lakeland;CodeQuestVille;13
+Melbourne;CodeQuestVille;14
+Miami;CodeQuestVille;15
+Naples;CodeQuestVille;16
+Ocala;CodeQuestVille;17
+Orlando;CodeQuestVille;18
+Panama City;CodeQuestVille;20
+Pensacola;CodeQuestVille;21
+Sarasota;CodeQuestVille;22
+Sebring;CodeQuestVille;23
+St. Augustine;CodeQuestVille;24
+St. Petersburg;CodeQuestVille;25
+Tallahassee;CodeQuestVille;26
+Tampa;CodeQuestVille;27
+West Palm Beach;CodeQuestVille;28
+Boca Raton;Bradenton;201
+Boca Raton;Kissimmee;176
+Boca Raton;Lakeland;193
+Bradenton;Naples;117
+Bradenton;Tallahassee;271
+Bradenton;Tampa;41
+Clearwater;Bradenton;41
+Clearwater;Tallahassee;235
+Clearwater;West Palm Beach;217
+Cocoa Beach;Boca Raton;204
+Cocoa Beach;Tallahassee;289
+Cocoa Beach;Tampa;130
+Cocoa Beach;West Palm Beach;127
+Daytona Beach;Melbourne;86
+Daytona Beach;Pensacola;425
+Daytona Beach;St. Augustine;53
+Daytona Beach;St. Petersburg;159
+Ft. Lauderdale;Miami;22
+Ft. Lauderdale;Naples;105
+Ft. Lauderdale;Ocala;276
+Ft. Lauderdale;Orlando;209
+Ft. Pierce;Cocoa Beach;69
+Ft. Pierce;Daytona Beach;133
+Ft. Pierce;Tampa;148
+Ft. Pierce;West Palm Beach;59
+Gainesville;Boca Raton;295
+Gainesville;Bradenton;164
+Gainesville;Jacksonville;69
+Gainesville;Key West;474
+Jacksonville;Gainesville;69
+Jacksonville;Sebring;219
+Jacksonville;St. Petersburg;217
+Jacksonville;Tampa;196
+Key West;Bradenton;353
+Key West;Sebring;304
+Key West;St. Petersburg;381
+Key West;Tallahassee;606
+Kissimmee;Pensacola;455
+Kissimmee;Sarasota;121
+Kissimmee;Sebring;71
+Kissimmee;St. Augustine;115
+Lakeland;Boca Raton;193
+Lakeland;Orlando;54
+Lakeland;Sebring;60
+Lakeland;Tampa;32
+Melbourne;Orlando;67
+Melbourne;Panama City;399
+Melbourne;Pensacola;493
+Melbourne;Tallahassee;307
+Miami;Clearwater;270
+Miami;Sarasota;217
+Miami;St. Petersburg;255
+Miami;Tampa;251
+Naples;Bradenton;117
+Naples;Ft. Myers;34
+Naples;Ft. Pierce;154
+Ocala;Kissimmee;87
+Ocala;Lakeland;87
+Ocala;Melbourne;138
+Ocala;Miami;294
+Ocala;Naples;229
+Orlando;Ocala;72
+Orlando;Panama City;336
+Orlando;Tampa;84
+Orlando;West Palm Beach;171
+Panama City;Boca Raton;519
+Panama City;Bradenton;364
+Panama City;St. Petersburg;344
+Panama City;Tallahassee;97
+Pensacola;St. Augustine;404
+Pensacola;St. Petersburg;448
+Pensacola;Tallahassee;199
+Pensacola;Tampa;434
+Sarasota;Boca Raton;199
+Sarasota;Bradenton;13
+Sarasota;Tallahassee;283
+Sarasota;Tampa;51
+Sebring;Sarasota;92
+Sebring;St. Augustine;183
+Sebring;St. Petersburg;106
+Sebring;West Palm Beach;113
+St. Augustine;Boca Raton;264
+St. Augustine;St. Petersburg;198
+St. Augustine;Tallahassee;201
+St. Augustine;Tampa;180
+St. Petersburg;Bradenton;26
+St. Petersburg;Clearwater;21
+St. Petersburg;Tampa;20
+St. Petersburg;West Palm Beach;200
+Tallahassee;Boca Raton;427
+Tallahassee;Naples;389
+Tallahassee;Ocala;170
+Tallahassee;Orlando;242
+Tampa;Orlando;85
+Tampa;Panama City;332
+Tampa;Pensacola;434
+Tampa;Sarasota;51
+West Palm Beach;Boca Raton;26
+West Palm Beach;Bradenton;176
+West Palm Beach;Tallahassee;412
+West Palm Beach;Tampa;199

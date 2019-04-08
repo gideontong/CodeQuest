@@ -1,0 +1,54 @@
+20
+O = O O =
+O O O = O
+= O O O O
+O O = O O
+O O O = O
+STUDENT 1
+O = O O =
+O = O O O
+= O O O O
+O O = O O
+O O O = O
+STUDENT 2
+O = O O =
+O O O = O
+= O O O O
+O O = O O
+O O O = O
+STUDENT 3
+O = O O O
+O O O = O
+= O O O O
+O = = O O
+O O O = O
+STUDENT 4
+O = O O =
+O O O = O
+= O O O O
+O O = O O
+O O O O =
+STUDENT 5
+O = = = O
+O O O = O
+= O O O O
+O O = O O
+O = O O O
+STUDENT 6
+= = O O O
+O O O = O
+O = O O O
+O = O O O
+O O O = O
+STUDENT 7
+= = O = O
+= O O = O
+= O = O O
+= O = O O
+= O O = O
+STUDENT 8
+O = O O =
+O O = = O
+= O O = O
+O O = = O
+O O = = O

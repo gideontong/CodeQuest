@@ -1,0 +1,2 @@
+Lowest path difficulty: 359
+Number of paths with the lowest difficulty: 2

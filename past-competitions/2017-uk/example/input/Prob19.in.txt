@@ -1,0 +1,12 @@
+11
+All Products,None
+Space Products,All Products
+Aeronautic Products,All Products
+Satellites,Space Products
+GPS,Satellites
+A2100,Satellites
+Manned Spacecraft,Space Products
+Orion,Manned Spacecraft
+Fighter Planes,Aeronautic Products
+F-35 Lightning 2,Fighter Planes
+F-22 Raptor,Fighter Planes

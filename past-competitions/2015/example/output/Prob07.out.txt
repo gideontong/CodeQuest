@@ -1,0 +1,16 @@
+Destroyed Ship: TEST xLoc: 12
+Destroyed Ship: BOGEE xLoc: 22
+Destroyed Ship: DOOM xLoc: 103
+Destroyed Ship: SHIP7 xLoc: 140
+Destroyed Ship: SHIP3 xLoc: 135
+Destroyed Ship: SHIP5 xLoc: 115
+Destroyed Ship: SHIP12 xLoc: 95
+Destroyed Ship: SHIP6 xLoc: 75
+Destroyed Ship: SHIP11 xLoc: 60
+Destroyed Ship: SHIP9 xLoc: 35
+Destroyed Ship: SHIP13 xLoc: 15
+Destroyed Ship: SHIP8 xLoc: 15
+Destroyed Ship: SHIP2 xLoc: 20
+Destroyed Ship: SHIP10 xLoc: 45
+Destroyed Ship: SHIP1 xLoc: 40
+Destroyed Ship: SHIP4 xLoc: 85

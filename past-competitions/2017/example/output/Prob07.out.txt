@@ -1,0 +1,4 @@
+Moreland=1.750
+Andrus=1.000
+Chirinos=1.667
+Odor=1.333

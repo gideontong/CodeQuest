@@ -1,0 +1,12 @@
+I REALLY HOPE YOU LIKE THIS PROBLEM
+WE THINK IT IS PRETTY COOL
+CHECK THE LOWER CASE MESSAGE
+FOR A LITTLE HINT
+CODE QUEST IS AWESOME
+GOOD LUCK EVERYONE
+
+i hope you are careful
+with minus sign and equals
+neither of them change
+if you call touppercase
+or tolowercase on them

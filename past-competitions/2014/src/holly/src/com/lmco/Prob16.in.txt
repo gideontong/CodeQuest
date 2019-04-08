@@ -1,0 +1,15 @@
+----------------------
+|xxxxt   x  xxxxxxxxx|
+|xxx     x xxx   Txxx|
+|xx  xx     x    xxxx|
+|xx   xx xx    xxxxxx|
+|xxx  xxxxxxxxxxxxxxx|
+|xxx  xxx    t  xxxxx|
+|xxx xxxx x xxx  xxxx|
+|xxt        xxxx  xxx|
+|x  xxxxxxxxxt   xxxx|
+|xxxxxt    xxxx  xxxx|
+|xxx  xx  xxx   xxxxx|
+|xxxxx        xxxxxxx|
+|H      xxxxxxxxxxxxx|
+----------------------

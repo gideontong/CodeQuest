@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RootElement>
+....<Element1 attribute1=" This  whitespace   should     appear as is.">This text should all be on one line!</Element1>
+....<Element2 name="VALUE" name2="VAlue2" />
+....<Element3 attr="Element1" />
+....<Element1 attribute1=" This  whitespace   should     appear as is.">This text should all be on one line too! Watch out for "quoted" content.</Element1>
+....<Element2 name="VALUE" name2="VAlue2">
+........Nested content
+........<Element3 attr="Element1" />
+........anyone?
+....</Element2>
+....<operation name="process">
+........<soap:operation soapaction="" style="document" />
+........<input>
+............<soap:body use="literal" />
+........</input>
+........<output>
+............<soap:body use="literal" />
+........</output>
+....</operation>
+</RootElement>

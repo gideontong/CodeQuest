@@ -1,0 +1,3 @@
+East High School = Lauren
+North High School = John
+West High School = Katie

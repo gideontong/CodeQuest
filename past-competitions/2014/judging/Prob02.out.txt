@@ -1,0 +1,351 @@
+HAND 1
+20-RED
+11-BLACK
+9-CLUBS
+16-DIAMONDS
+4-HEARTS
+2-SPADES
+2-2 cards
+2-3 cards
+1-4 card
+5-5 cards
+2-6 cards
+3-7 cards
+3-8 cards
+1-9 card
+2-10 cards
+1-Jack
+3-Queens
+3-Kings
+3-Aces
+HAND 2
+6-RED
+11-BLACK
+5-CLUBS
+3-DIAMONDS
+3-HEARTS
+6-SPADES
+1-3 card
+3-4 cards
+1-5 card
+4-6 cards
+3-8 cards
+1-9 card
+2-10 cards
+1-Jack
+1-Ace
+HAND 3
+11-RED
+9-BLACK
+6-CLUBS
+6-DIAMONDS
+5-HEARTS
+3-SPADES
+1-2 card
+3-4 cards
+5-5 cards
+2-6 cards
+4-8 cards
+2-10 cards
+1-Jack
+1-Queen
+1-Ace
+HAND 4
+8-RED
+11-BLACK
+3-CLUBS
+4-DIAMONDS
+4-HEARTS
+8-SPADES
+2-3 cards
+2-4 cards
+2-5 cards
+1-6 card
+1-7 card
+1-8 card
+1-9 card
+1-Jack
+2-Queens
+1-King
+5-Aces
+HAND 5
+11-RED
+9-BLACK
+5-CLUBS
+7-DIAMONDS
+4-HEARTS
+4-SPADES
+2-2 cards
+3-3 cards
+1-4 card
+2-6 cards
+1-8 card
+1-9 card
+1-10 card
+3-Jacks
+1-Queen
+2-Kings
+3-Aces
+HAND 6
+9-RED
+14-BLACK
+8-CLUBS
+5-DIAMONDS
+4-HEARTS
+6-SPADES
+1-2 card
+1-3 card
+4-5 cards
+3-8 cards
+6-9 cards
+2-10 cards
+1-Jack
+3-Kings
+2-Aces
+HAND 7
+8-RED
+11-BLACK
+3-CLUBS
+4-DIAMONDS
+4-HEARTS
+8-SPADES
+2-2 cards
+2-5 cards
+3-6 cards
+4-8 cards
+2-9 cards
+2-Jacks
+1-Queen
+2-Kings
+1-Ace
+HAND 8
+8-RED
+14-BLACK
+8-CLUBS
+5-DIAMONDS
+3-HEARTS
+6-SPADES
+1-2 card
+2-3 cards
+1-4 card
+4-5 cards
+2-6 cards
+2-8 cards
+3-9 cards
+2-10 cards
+1-Queen
+2-Kings
+2-Aces
+HAND 9
+9-RED
+11-BLACK
+7-CLUBS
+2-DIAMONDS
+7-HEARTS
+4-SPADES
+1-5 card
+3-6 cards
+3-7 cards
+1-8 card
+3-9 cards
+1-10 card
+2-Jacks
+2-Queens
+4-Aces
+HAND 10
+10-RED
+9-BLACK
+5-CLUBS
+6-DIAMONDS
+4-HEARTS
+4-SPADES
+2-2 cards
+1-3 card
+2-5 cards
+3-8 cards
+1-9 card
+5-10 cards
+3-Queens
+1-King
+1-Ace
+HAND 11
+21-RED
+14-BLACK
+7-CLUBS
+9-DIAMONDS
+12-HEARTS
+7-SPADES
+3-2 cards
+5-4 cards
+1-5 card
+5-6 cards
+6-7 cards
+2-8 cards
+2-9 cards
+4-10 cards
+4-Queens
+2-Kings
+1-Ace
+HAND 12
+11-RED
+17-BLACK
+11-CLUBS
+7-DIAMONDS
+4-HEARTS
+6-SPADES
+1-2 card
+4-3 cards
+1-4 card
+2-5 cards
+2-6 cards
+3-7 cards
+3-8 cards
+1-9 card
+2-10 cards
+4-Jacks
+1-Queen
+2-Kings
+2-Aces
+HAND 13
+14-RED
+11-BLACK
+7-CLUBS
+10-DIAMONDS
+4-HEARTS
+4-SPADES
+4-2 cards
+1-3 card
+1-5 card
+2-6 cards
+1-7 card
+4-8 cards
+3-9 cards
+2-10 cards
+3-Jacks
+1-Queen
+3-Aces
+HAND 14
+3-RED
+6-BLACK
+2-CLUBS
+2-DIAMONDS
+1-HEART
+4-SPADES
+2-4 cards
+3-6 cards
+1-Jack
+3-Queens
+HAND 15
+11-RED
+11-BLACK
+8-CLUBS
+6-DIAMONDS
+5-HEARTS
+3-SPADES
+1-2 card
+1-3 card
+2-4 cards
+2-5 cards
+4-6 cards
+2-7 cards
+2-8 cards
+1-10 card
+1-Jack
+1-Queen
+3-Kings
+2-Aces
+HAND 16
+9-RED
+17-BLACK
+9-CLUBS
+3-DIAMONDS
+6-HEARTS
+8-SPADES
+2-2 cards
+2-3 cards
+3-6 cards
+1-7 card
+1-8 card
+3-9 cards
+3-10 cards
+2-Jacks
+3-Queens
+3-Kings
+3-Aces
+HAND 17
+14-RED
+13-BLACK
+4-CLUBS
+5-DIAMONDS
+9-HEARTS
+9-SPADES
+3-2 cards
+1-4 card
+2-5 cards
+3-6 cards
+1-7 card
+3-8 cards
+2-9 cards
+1-10 card
+3-Jacks
+2-Queens
+3-Kings
+3-Aces
+HAND 18
+20-RED
+10-BLACK
+7-CLUBS
+11-DIAMONDS
+9-HEARTS
+3-SPADES
+2-2 cards
+1-3 card
+2-4 cards
+2-5 cards
+1-6 card
+6-7 cards
+1-8 card
+4-9 cards
+1-10 card
+2-Jacks
+3-Queens
+5-Kings
+HAND 19
+19-RED
+19-BLACK
+9-CLUBS
+7-DIAMONDS
+12-HEARTS
+10-SPADES
+1-2 card
+6-3 cards
+3-4 cards
+1-5 card
+5-6 cards
+3-7 cards
+4-8 cards
+2-9 cards
+1-10 card
+3-Jacks
+2-Queens
+2-Kings
+5-Aces
+HAND 20
+17-RED
+14-BLACK
+8-CLUBS
+12-DIAMONDS
+5-HEARTS
+6-SPADES
+3-2 cards
+2-3 cards
+3-4 cards
+1-5 card
+1-7 card
+4-8 cards
+2-9 cards
+6-10 cards
+2-Jacks
+2-Queens
+3-Kings
+2-Aces

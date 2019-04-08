@@ -1,0 +1,19 @@
+<XML>
+  <MoviesILike>
+    <Movie>
+      <Title>Back to the Future</Title>
+      <Year>1982</Year>
+    </Movie>
+    <Movie>
+      <Title>Iron Man</Title>
+    </Movie>
+  </MoviesILike>
+  <MoviesIDoNotLike>
+    <Movie>
+      <Title>Steel Magnolias</Title>
+    </Movie>
+    <Movie>
+      <Title>Grease</Title>
+    </Movie>
+  </MoviesIDoNotLike>
+</XML>

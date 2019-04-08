@@ -1,0 +1,13 @@
+Phoenix;Tampa
+Seattle;Los Angeles;10
+Los Angeles;Omaha;5
+Los Angeles;Phoenix;2
+Omaha;Seattle;12
+Phoenix;Omaha;8
+Phoenix;Green Bay;18
+Phoenix;Pittsburgh;20
+Green Bay;Omaha;5
+Green Bay;Pittsburgh;6
+Dallas;Pittsburgh;10
+Pittsburgh;Tampa;15
+Tampa;Phoenix;21

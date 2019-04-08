@@ -1,0 +1,46 @@
+Here is what the calculateLeapDistancesOnTreasureMap() comes up with:
+-------------------------------------------------------------------------------------
+
+  * Using the Example IO map file
+  ** None of these steps account the for the light you have.  This is just a number of steps needed
+
+
+First, counting the steps from the Hunter position to the Treasure position and torches
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+|   x   x   x   x   t   45  46  47  x   51  52  x   x   x   x   x   x   x   x   x   |   
+|   x   x   x   42  43  44  45  46  x   50  x   x   x   56  57  58  T   x   x   x   |   
+|   x   x   42  41  x   x   46  47  48  49  50  x   54  55  56  57  x   x   x   x   |   
+|   x   x   41  40  41  x   x   48  x   x   51  52  53  54  x   x   x   x   x   x   |   
+|   x   x   x   39  40  x   x   x   x   x   x   x   x   x   x   x   x   x   x   x   |   
+|   x   x   x   38  39  x   x   x   29  28  27  26  t   24  23  x   x   x   x   x   |   
+|   x   x   x   37  x   x   x   x   30  x   28  x   x   x   22  21  x   x   x   x   |   
+|   x   x   t   36  35  34  33  32  31  30  29  x   x   x   x   20  21  x   x   x   |   
+|   x   39  38  x   x   x   x   x   x   x   x   x   t   19  18  19  x   x   x   x   |   
+|   x   x   x   x   x   t   11  10  11  12  x   x   x   x   17  18  x   x   x   x   |   
+|   x   x   x   0   0   x   x   9   10  x   x   x   14  15  16  x   x   x   x   x   |   
+|   x   x   x   x   x   6   7   8   9   10  11  12  13  x   x   x   x   x   x   x   |   
+|   H   1   2   3   4   5   6   x   x   x   x   x   x   x   x   x   x   x   x   x   |   
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+Recalculating steps from a torch to the other torches and the Treasure
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+|   x   x   x   x   t   41  42  43  x   47  48  x   x   x   x   x   x   x   x   x   |   
+|   x   x   x   38  39  40  41  42  x   46  x   x   x   52  53  54  T   x   x   x   |   
+|   x   x   38  37  x   x   42  43  44  45  46  x   50  51  52  53  x   x   x   x   |   
+|   x   x   37  36  37  x   x   44  x   x   47  48  49  50  x   x   x   x   x   x   |   
+|   x   x   x   35  36  x   x   x   x   x   x   x   x   x   x   x   x   x   x   x   |   
+|   x   x   x   34  35  x   x   x   25  24  23  22  t   20  19  x   x   x   x   x   |   
+|   x   x   x   33  x   x   x   x   26  x   24  x   x   x   18  17  x   x   x   x   |   
+|   x   x   t   32  31  30  29  28  27  26  25  x   x   x   x   16  17  x   x   x   |   
+|   x   35  34  x   x   x   x   x   x   x   x   x   t   15  14  15  x   x   x   x   |   
+|   x   x   x   x   x   t   1   2   3   4   x   x   x   x   13  14  x   x   x   x   |   
+|   x   x   x   0   0   x   x   3   4   x   x   x   10  11  12  x   x   x   x   x   |   
+|   x   x   x   x   x   6   5   4   5   6   7   8   9   x   x   x   x   x   x   x   |   
+|   H   11  10  9   8   7   6   x   x   x   x   x   x   x   x   x   x   x   x   x   |   
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+
+Then you keep making these new maps from every torch on the original map (loop)...
+
+After you know this information and store it into a Object
+You can recursively search the possibilities using a weighted shortest path approach.

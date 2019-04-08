@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:conv="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/apps/otm/IntXmlService" xmlns:wsr="http://www.openuri.org/2002/10/soap/reliability/" targetNamespace="http://xmlns.oracle.com/apps/otm/IntXmlService">
+<types xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:conv="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/apps/otm/IntXmlService" xmlns:wsr="http://www.openuri.org/2002/10/soap/reliability/">
+<xsd:schema xmlns="http://xmlns.oracle.com/apps/otm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.oracle.com/apps/otm">
+<xsd:annotation></xsd:annotation>
+<xsd:element name="Transmission"><xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element      ref="TransmissionHeader"/>
+                        <xsd:element ref="TransmissionBody"          />
+        </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TransmissionAck">
+                <xsd:annotation>                          </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+            <xsd:element ref="EchoedTransmissionHeader"/>
+            <xsd:element minOccurs="0"                ref="TransmissionAckStatus"/>
+            <xsd:element minOccurs="0" ref="TransmissionAckReason"/>
+            <xsd:element                 minOccurs="0" ref="StackTrace"/>
+            <xsd:element minOccurs="0" ref="TransmissionText"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Refnum"/>
+            <xsd:element minOccurs="0" ref="QueryResultInfo"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+<xsd:element name="TransmissionReport">
+    <xsd:annotation></xsd:annotation>
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" ref="SendReason"/>
+            <xsd:element ref="TransmissionNo"/>
+            <xsd:element minOccurs="0" ref="SenderTransmissionNo"/>
+            <xsd:element minOccurs="0" ref="ReportStatus"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Refnum"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="IntegrationLogMessage"/>
+            <xsd:element minOccurs="0" ref="TransmissionSummary"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+<xsd:element name="TransmissionHeader">
+    <xsd:annotation></xsd:annotation>
+    <xsd:complexType>
+        <xsd:sequence>
+<xsd:element minOccurs="0" ref="Version"/><xsd:element minOccurs="0" ref="TransmissionType"/><xsd:element minOccurs="0" ref="QueryReplyFormat"/><xsd:element minOccurs="0" ref="StagingInfo"/>
+<xsd:element minOccurs="0" ref="TransmissionCreateDt"/>
+<xsd:element minOccurs="0" ref="TransactionCount"/>
+<xsd:element minOccurs="0" ref="SenderHostName"/>
+<xsd:element minOccurs="0" ref="ReceiverHostName"/>
+<xsd:element minOccurs="0" ref="UserName"/>
+<xsd:element minOccurs="0" ref="Password"/>
+<xsd:element minOccurs="0" ref="SenderTransmissionNo"/>
+<xsd:element minOccurs="0" ref="ReferenceTransmissionNo"/>
+<xsd:element minOccurs="0" ref="SuppressTransmissionAck"/>
+<xsd:element minOccurs="0" ref="AckSpec"/>
+<xsd:element minOccurs="0" ref="IsProcessInSequence"/>
+<xsd:element minOccurs="0" ref="StopProcessOnError"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0"                        ref="ProcessGrouping"/>
+<xsd:element                 minOccurs="0" ref="NotifyInfo"/>
+<xsd:element maxOccurs="unbounded" minOccurs="0" ref="Refnum"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+<xsd:element name="TransmissionBody">
+    <xsd:annotation></xsd:annotation>
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded"                           ref="GLogXMLElement"/>
+        </xsd:sequence></xsd:complexType></xsd:element>
+<xsd:complexType abstract="true" name="GLogXMLTransactionType"/>
+<xsd:element name="GLogXMLTransaction" type="xsd:anyType"/>
+<xsd:element name="GLogXMLElement">
+    <xsd:annotation></xsd:annotation>
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:choice minOccurs="0">
+                <xsd:element minOccurs="0" ref="TransactionHeader"/>
+                <xsd:element minOccurs="0" ref="ProcessInfo"/>
+            </xsd:choice>
+            <xsd:choice>
+                <xsd:element ref="TransOrder"/>
+                <xsd:element ref="PlannedShipment"/>
+                <xsd:element ref="ActualShipment"/>
+                <xsd:element ref="TenderOffer"/>
+                <xsd:element ref="TenderResponse"/>
+                <xsd:element ref="Mileage"/>
+                <xsd:element ref="Location"/>
+                <xsd:element ref="ItemMaster"/>
+                <xsd:element ref="TransmissionReport"/>
+                <xsd:element ref="RemoteQuery"/>
+                <xsd:element ref="RemoteQueryReply"/>
+                <xsd:element ref="ShipmentStatus"/>
+                <xsd:element ref="XLane"/>
+                <xsd:element ref="ServiceTime"/>
+                <xsd:element ref="ExchangeRate"/>
+                <xsd:element ref="Invoice"/>
+                <xsd:element ref="Billing"/>
+                <xsd:element ref="Voucher"/>
+                <xsd:element ref="Release"/>
+                <xsd:element ref="AllocationBase"/>
+                <xsd:element ref="FinancialSystemFeed"/>
+                <xsd:element ref="HazmatGeneric"/>
+                <xsd:element ref="HazmatItem"/>
+                <xsd:element ref="DataQuerySummary"/>
+                <xsd:element ref="ShipmentLink"/>
+                <xsd:element ref="CSVFileContent"/>
+                <xsd:element ref="LocationStatusUpdate"/>
+                <xsd:element ref="TransOrderStatusUpdate"/>
+                <xsd:element ref="PaymentStatusUpdate"/>
+                <xsd:element ref="OrderReleaseStatusUpdate"/>
+                <xsd:element ref="ShipmentStatusUpdate"/>
+                <xsd:element ref="VoucherStatusUpdate"/>
+                <xsd:element ref="RATE_OFFERING"/>
+                <xsd:element ref="RATE_GEO"/>
+                <xsd:element ref="ShipmentGroup"/>
+                <xsd:element ref="ShipmentGroupStatusUpdate"/>
+                <xsd:element ref="ShipmentGroupTenderOffer"/>
+                <xsd:element ref="TransactionAck"/>
+                <xsd:element ref="Schedule"/>
+                <xsd:element ref="ScheduleStatusUpdate"/>
+                <xsd:element ref="BulkPlan"/>
+                <xsd:element ref="FleetBulkPlan"/>
+                <xsd:element ref="GenericStatusUpdate"/>
+                <xsd:element ref="Topic"/>
+                <xsd:element ref="SShipUnit"/>
+                <xsd:element ref="Sku"/>
+                <xsd:element ref="SkuTransaction"/>
+                <xsd:element ref="TransOrderStatus"/>
+                <xsd:element ref="Contact"/>
+                <xsd:element ref="ContactGroup"/>
+                <xsd:element ref="OBShipUnit"/>
+                <xsd:element ref="OBLine"/>
+                <xsd:element ref="BulkRating"/>
+                <xsd:element ref="BulkTrailerBuild"/>
+                <xsd:element ref="BulkContMove"/>
+                <xsd:element ref="Itinerary"/>
+                <xsd:element ref="ReleaseInstruction"/>
+                <xsd:element ref="Voyage"/>
+                <xsd:element ref="ShipStop"/>
+                <xsd:element ref="Job"/>
+                <xsd:element ref="Accrual"/>
+                <xsd:element ref="OrderMoveReplace"/>
+                <xsd:element ref="Consol"/>
+                <xsd:element ref="CharterVoyage"/>
+                <xsd:element ref="BookingLineAmendment"/>
+                <xsd:element ref="Document"/>
+                <xsd:element ref="Claim"/>
+                <xsd:element ref="TransOrderLink"/>
+                <xsd:element ref="SkuEvent"/>
+                <xsd:element ref="RouteTemplate"/>
+                <xsd:element ref="Quote"/>
+                <xsd:element ref="Driver"/>
+                <xsd:element ref="PowerUnit"/>
+                <xsd:element ref="DriverCalendarEvent"/>
+                <xsd:element ref="WorkInvoice"/>
+                <xsd:element ref="Equipment"/>
+                <xsd:element ref="ActivityTimeDef"/>
+                <xsd:element ref="User"/>
+                <xsd:element ref="CSVDataLoad"/>
+                <xsd:element ref="OrderMovement"/>
+                <xsd:element ref="GLogXMLTransaction"/>
+                <xsd:element ref="Device"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+<xsd:element name="ZZChangeHistory">
+    <xsd:annotation></xsd:annotation>
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element ref="ZZChangeHistory_6_1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+<xsd:element name="ZZChangeHistory_6_1" type="xsd:string">
+    <xsd:annotation>
+        <xsd:documentation>06/15/2009; kwasi.yirenkyi; Baseline prior to Release 6.1 Changes 01/05/2009; rupal.shah - Added Device element to GLogXMLElement element (Re: MobileComm, 8279857) 06/15/2009; kwasi.yirenkyi - Added EndDate element to DriverHeader element (Re: 8498121) 06/18/2009;harsha.virupakshaiah -Added FleetBulkPlan element to GLogXMLElement element (Re: 8437585) -Added DriverAssignBulkPlanGid and EquipmentAssignBulkPlanGid to ShipmentHeader2 element (Re: 8437585) 07/15/2009; garima.shivani -Added AssocDate element to SkuQuantityAsset 07/20/2009; rupal.shah - Removed IsHandleApptsForShipGroup element from Location element (Re: DOCK556, 8446652) - Replaced by ApptObjectType element in Location - Added ApptObjectType element to Location element (Re: DOCK556, 8446652) - Added ApptActivityType element to Location element (Re: DOCK556, 8446652) - Added ApptSearchDays element to Location element (Re: DOCK556, 8446652) - Added ApptShowNumOfOptions element to Location element (Re: DOCK556, 8446652) - Added ApptActivityType element to LocationResource element (Re: DOCK556, 8446652) - Added ApptActivityType element to AppointmentInfo element (Re: DOCK556, 8446652) 07/20/2009; madhu.pulipaka - Added new element IntPreferenceGid to RIQQUERY element (Re: 8272090) 07/28/2009; fan.zeng - Changed SensorEvent.StatusLevel from optional to required (Re:8737118) 07/29/2009; harsha.virupakshaiah - Added OrderMovement element to Release element (Re: MTIEROMR, 8688777) - Deprecated OrderMoveReplace element as of 6.1 (Re: MTIEROMR, 8688777) 07/29/2009; madhu.pulipaka - Added IntPreferenceGid to GenericQuery (Re: 8272090) 08/07/2009; harsha.virupakshaiah - Added COST_CATEGORY_GID element to ACCESSORIAL_COST_ROW element (Re: FLTEXRAT, 8725036) - Removed COST_LEVEL element from ACCESSORIAL_COST_ROW element (Re: FLTEXRAT, 8725036) Replaced by COST_CATEGORY_GID - Added COST_CATEGORY_GID element to RATE_GEO_COST_ROW element (Re: FLTEXRAT, 8725036) - Removed COST_LEVEL element from RATE_GEO_COST_ROW element (Re: FLTEXRAT, 8725036) Replaced by COST_CATEGORY_GID - Added IsWeighted element to ShipmentCost element (Re: FLTEXRAT, 8725036) - Added ShipmentInfCostQualGid to ShipmentInfCost element (Re: FLTEXRAT, 8725036) - Updated notes for InfCostType element (Re: FLTEXRAT, 8725036) - Added CostCategorySetGid to RIQQuery element (Re: FLTEXRAT, 8725036) 08/10/2009; harsha.virupakshaiah - Added ShipUnitGid and LineNumber elements to ShipmentCost element (Re: PARCEL, 8725043) 08/11/2009; rupal.shah - Added RepetitionSchedStopNo element to ShipmentStop element (Re: 8592299) 08/12/2009; kwasi.yirenkyi - Added ActivityTimeRemain element to SStatusHOSRuleState element (Re: 8665246) 08/17/2009; harsha.virupakshaiah - Added IsWeighted element to CostDetails element (Re: FLTEXRAT, 8725036) 08/27/2009: harsha.virupakshaiah - Added Indicator element to DriverHeader element (Re: 8321034) 08/27/2009: madhu.pulipaka -Added new element ServiceCompletionState (Re: 7693988) -Added element ServiceCompletionState to ShipStatusSpclService element(Re: 7693988) 09/10/2009: mark.hagan -Added new element MessageText to NotifyInfo (Re: 8279857) - Added Driver and PowerUnit elements as a child of the Shipment element (Re: 8784094) 09/23/2009: madhu.pulipaka -Added element EquipmentTypeGid to ReleaseHeader 10/02/2009; mark.hagan -Added ItineraryType to Itinerary (Re: 8967834) 10/13/2009: madhu.pulipaka - Added element DriverAssignment to Driver element (Re: 8784011) 10/21/2009: harsha.virupakshaiah - Removed TeamName from DriverTeam element (Re: 8332065) 11/11/2009: harsha.virupakshaiah - Added IsFixedAddress to Location element (Re: 9091670) - Added PrimaryAddressLineSeq to Location element (Re: 9091670) 11/16/2009: madhu.pulipaka - Added PickupRailCarrier to ReleaseHeader element (Re: 8429385) - Added DeliveryRailCarrier to ReleaseHeader element (Re: 8429385) 11/18/2009; kwasi.yirenkyi - Changed schema notes for IsAddressValid element (Re: 9129920) 02/08/2010; kwasi.yirenkyi - Changed GLogXMLElement to anyType (Re: 9358166) 02/21/2010; kwasi.yirenkyi - Added EquipmentName element to Equipment element (Re: 9121918) - Added EquipmentOwner element to Equipment element (Re: 9121918) - Added OwnerType element to Equipment element (Re: 9121918)</xsd:documentation>
+    </xsd:annotation>
+</xsd:element>
+<xsd:element name="TransOrder">
+    <xsd:annotation></xsd:annotation>
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element ref="TransOrderHeader"/>
+            <xsd:choice minOccurs="0">
+                <xsd:element minOccurs="0" ref="TransOrderLineDetail"/>
+                <xsd:element minOccurs="0" ref="ShipUnitDetail"/>
+            </xsd:choice>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Location"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="PackagedItem"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+<xsd:element name="TransOrderHeader">
+    <xsd:annotation></xsd:annotation>
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" ref="SendReason"/>
+            <xsd:element minOccurs="0" ref="IntSavedQuery"/>
+            <xsd:element ref="TransOrderGid"/>
+            <xsd:element minOccurs="0" ref="ExternalSystemId"/>
+            <xsd:element ref="TransactionCode"/>
+            <xsd:element minOccurs="0" ref="ReplaceChildren"/>
+            <xsd:element minOccurs="0" ref="IsUpdateShipmentOnly"/>
+            <xsd:element minOccurs="0" ref="ProcessingCodeGid"/>
+            <xsd:element minOccurs="0" ref="ReleaseMethodGid"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="InvolvedParty"/>
+            <xsd:element minOccurs="0" ref="CommercialTerms"/>
+            <xsd:element minOccurs="0" ref="PlanningGroupGid"/>
+            <xsd:element minOccurs="0" ref="FixedItineraryGid"/>
+            <xsd:element minOccurs="0" ref="OrderTypeGid"/>
+                        <xsd:element minOccurs="0" ref="TimeWindowEmphasisGid"/>
+                        <xsd:element minOccurs="0" ref="IsAppointmentRequired"/>
+                        <xsd:element minOccurs="0" ref="IsMakeAppointmentBeforePlan"/>
+                        <xsd:choice minOccurs="0">
+                            <xsd:element ref="RateServiceGid"/>
+                            <xsd:element ref="RateServiceProfileGid"/>
+                        </xsd:choice>
+                        <xsd:choice minOccurs="0">
+                            <xsd:element ref="ServiceProviderGid"/>
+                            <xsd:element ref="ServiceProviderProfileGid"/>
+                        </xsd:choice>
+                        <xsd:choice minOccurs="0">
+                            <xsd:element ref="SellServiceProviderGid"/>
+                            <xsd:element ref="SellServiceProviderProfileGid"/>
+                        </xsd:choice>
+                        <xsd:choice minOccurs="0">
+                            <xsd:element ref="TransportModeGid"/>
+                            <xsd:element ref="ModeProfileGid"/>
+                        </xsd:choice>
+                        <xsd:choice minOccurs="0">
+                            <xsd:element ref="EquipmentGroupGid"/>
+                            <xsd:element ref="EquipmentGroupProfileGid"/>
+                        </xsd:choice>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="OrderRefnum"/>
+                        <xsd:element minOccurs="0" ref="ShipWithGroup"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Remark"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="OBSpecialService"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="AccessorialCodeGid"/>
+                        <xsd:element minOccurs="0" ref="IsFullyReleased"/>
+                        <xsd:element minOccurs="0" ref="EffectiveDate"/>
+                        <xsd:element minOccurs="0" ref="ExpirationDate"/>
+                        <xsd:element minOccurs="0" ref="IsTemplate"/>
+                        <xsd:element minOccurs="0" ref="RateOfferingGid"/>
+                        <xsd:element minOccurs="0" ref="RateGeoGid"/>
+                        <xsd:element minOccurs="0" ref="SellRateOfferingGid"/>
+                        <xsd:element minOccurs="0" ref="SellRateGeoGid"/>
+                        <xsd:element minOccurs="0" ref="FixedSellItineraryGid"/>
+                        <xsd:element minOccurs="0" ref="MustShipDirect"/>
+                        <xsd:element minOccurs="0" ref="MustShipThruXDock"/>
+                        <xsd:element minOccurs="0" ref="MustShipThruPool"/>
+                        <xsd:element minOccurs="0" ref="BundlingType"/>
+                        <xsd:element minOccurs="0" ref="BatchBalance"/>
+                        <xsd:element minOccurs="0" ref="IsShipperKnown"/>
+                        <xsd:element minOccurs="0" ref="AllowOverReleasing"/>
+                        <xsd:element minOccurs="0" ref="TotalNetWeightVolume"/>
+                        <xsd:element minOccurs="0" ref="DimRateFactorGid"/>
+                        <xsd:element minOccurs="0" ref="PickupRoutingSeqGid"/>
+                        <xsd:element minOccurs="0" ref="DropoffRoutingSeqGid"/>
+                        <xsd:element minOccurs="0" ref="StuffLocation"/>
+                        <xsd:element minOccurs="0" ref="DestuffLocation"/>
+                        <xsd:element minOccurs="0" ref="StowageModeGid"/>
+                        <xsd:element minOccurs="0" ref="UnitizationConditionName"/>
+                        <xsd:element minOccurs="0" ref="CustomerUnitizationRequest"/>
+                        <xsd:element minOccurs="0" ref="IsIgnoreLocationCalendar"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ReleaseInstruction"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Text"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="OrderLegConstraint"/>
+                        <xsd:element minOccurs="0" ref="OrderPriority"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TransOrderLine">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="TransOrderLineGid"/>
+                        <xsd:element minOccurs="0" ref="TransactionCode"/>
+                        <xsd:element minOccurs="0" ref="PackagedItemRef"/>
+                        <xsd:element minOccurs="0" ref="InitialItemGid"/>
+                        <xsd:element minOccurs="0" ref="PackagedItemSpecRef"/>
+                        <xsd:element minOccurs="0" ref="PackagedItemSpecCount"/>
+                        <xsd:element minOccurs="0" ref="TransportHandlingUnitRef"/>
+                        <xsd:element minOccurs="0" ref="ShipFromLocationRef"/>
+                        <xsd:element minOccurs="0" ref="ShipFromLoadPoint"/>
+                        <xsd:element minOccurs="0" ref="ShipToLocationRef"/>
+                        <xsd:element minOccurs="0" ref="ShipToUnloadPoint"/>
+                        <xsd:element minOccurs="0" ref="ItemQuantity"/>
+                        <xsd:element minOccurs="0" ref="TimeWindow"/>
+                        <xsd:element minOccurs="0" ref="ReleasedCount"/>
+                        <xsd:element minOccurs="0" ref="NumLayersPerShipUnit"/>
+                        <xsd:element minOccurs="0" ref="QuantityPerLayer"/>
+                        <xsd:element minOccurs="0" ref="ReleasedWeightVolume"/>
+                        <xsd:element minOccurs="0" ref="PlanFromLocationGid"/>
+                        <xsd:element minOccurs="0" ref="PlanFromLoadPoint"/>
+                        <xsd:element minOccurs="0" ref="PlanToLocationGid"/>
+                        <xsd:element minOccurs="0" ref="PlanToUnloadPoint"/>
+                        <xsd:element minOccurs="0" ref="RoundingInstruction"/>
+                        <xsd:element minOccurs="0" ref="RoundTo"/>
+                        <xsd:element minOccurs="0" ref="BufferLocationGid"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="OrderLineRefnum"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Remark"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ItemAttributes"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="InvolvedParty"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ShipUnit">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="ShipUnitGid"/>
+                        <xsd:element minOccurs="0" ref="TransactionCode"/>
+                        <xsd:choice minOccurs="0">
+                            <xsd:element minOccurs="0" ref="TransportHandlingUnitRef"/>
+                            <xsd:element minOccurs="0" ref="ShipUnitSpecGid"/>
+                        </xsd:choice>
+                        <xsd:element minOccurs="0" ref="ShipFromLocationRef"/>
+                        <xsd:element minOccurs="0" ref="ShipFromLoadPoint"/>
+                        <xsd:element minOccurs="0" ref="ShipToLocationRef"/>
+                        <xsd:element minOccurs="0" ref="ShipToUnloadPoint"/>
+                        <xsd:element minOccurs="0" ref="TimeWindow"/>
+                        <xsd:element minOccurs="0" ref="WeightVolume"/>
+                        <xsd:element minOccurs="0" ref="UnitNetWeightVolume"/>
+                        <xsd:element minOccurs="0" ref="LengthWidthHeight"/>
+                        <xsd:element minOccurs="0" ref="Diameter"/>
+                        <xsd:element minOccurs="0" ref="CoreDiameter"/>
+                        <xsd:element minOccurs="0" ref="StackingIndex"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ShipUnitSeal"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ShipUnitContent"/>
+                        <xsd:element minOccurs="0" ref="DeclaredValue"/>
+                        <xsd:element minOccurs="0" ref="FlexCommodityQualifierGid"/>
+                        <xsd:element minOccurs="0" ref="FlexCommodityValue"/>
+                        <xsd:element minOccurs="0" ref="IsSplitAllowed"/>
+                        <xsd:element minOccurs="0" ref="IsCountSplittable"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Remark"/>
+                        <xsd:element minOccurs="0" ref="ShipUnitCount"/>
+                        <xsd:element minOccurs="0" ref="TagInfo"/>
+                        <xsd:choice minOccurs="0">
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element minOccurs="0" ref="IsShippable"/>
+                                <xsd:element minOccurs="0" ref="PlanFromLocationGid"/>
+                                <xsd:element minOccurs="0" ref="PlanFromLoadPoint"/>
+                                <xsd:element minOccurs="0" ref="PlanToLocationGid"/>
+                                <xsd:element minOccurs="0" ref="PlanToUnloadPoint"/>
+                                <xsd:element minOccurs="0" ref="ReleasedCount"/>
+                                <xsd:element minOccurs="0" ref="BufferLocationGid"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="AccessorialCodeGid"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="OBShipUnitSpecialService"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Status"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="InvolvedParty"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="OBShipUnitLoadConfig"/>
+                            </xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element minOccurs="0" ref="TransOrderShipUnitGid"/>
+                                <xsd:element minOccurs="0" ref="ReleaseInstrSeq"/>
+                                <xsd:element minOccurs="0" ref="REquipmentSequence"/>
+                                <xsd:element minOccurs="0" ref="SecondaryUnitWeightVolume"/>
+                                <xsd:element minOccurs="0" ref="SecondaryUnitNetWeightVolume"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ShipUnitLoadConfig"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ShipUnitSpecialService"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Text"/>
+                            </xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:choice minOccurs="0">
+                                    <xsd:element ref="SEquipmentGid"/>
+                                    <xsd:element ref="SEquipmentGidQuery"/>
+                                    <xsd:element ref="SEquipmentSShipUnitInfo"/>
+                                </xsd:choice>
+                                <xsd:element minOccurs="0" ref="ReleaseShipUnitGid"/>
+                                <xsd:element minOccurs="0" ref="ReceivedWeightVolume"/>
+                                <xsd:element minOccurs="0" ref="ReceivedNetWeightVolume"/>
+                                <xsd:element minOccurs="0" ref="ReceivedShipUnitCount"/>
+                                <xsd:element minOccurs="0" ref="RangeStart"/>
+                                <xsd:element minOccurs="0" ref="RangeEnd"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SShipUnitSpecialService"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ShipUnitPiece"/>
+                            </xsd:sequence>
+                        </xsd:choice>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ShipUnitRefnum"/>
+                        <xsd:element minOccurs="0" ref="PickupOrStopGid"/>
+                        <xsd:element minOccurs="0" ref="DropoffOrStopGid"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUEquipRefUnit"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TermLocationText" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="PlanningGroupGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="FixedItineraryGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="OrderTypeGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TimeWindowEmphasisGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="IsHoldAsLateAsPossible" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="IsAppointmentRequired" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="IsMakeAppointmentBeforePlan" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="RateServiceProfileGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ServiceProviderGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TransportModeGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="OrderRefnum">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="OrderRefnumQualifierGid"/>
+                        <xsd:element ref="OrderRefnumValue"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="OrderRefnumQualifierGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="OrderRefnumValue" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ShipWith">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" ref="MergeLocationGid"/>
+                        <xsd:element ref="ShipWithGroup"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="MergeLocationGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="LocationGid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="EmailAddress" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="SpecialService">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="SpecialServiceGid"/>
+                        <xsd:element minOccurs="0" ref="SpecialServiceDesc"/>
+                        <xsd:element minOccurs="0" ref="ProcessAsFlowThru"/>
+                        <xsd:element minOccurs="0" ref="AdjustmentReasonGid"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SpecialServiceRef"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Remark"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="SpecialServiceDesc" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Length">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="LengthValue"/>
+                        <xsd:element ref="LengthUOMGid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="LengthUOMGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Width">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="WidthValue"/>
+                        <xsd:element ref="WidthUOMGid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="WidthUOMGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Height">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="HeightValue"/>
+                        <xsd:element ref="HeightUOMGid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="HeightUOMGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ShipUnitSeal">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="SealNumber"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ShipUnitContent">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" ref="PackagedItemRef"/>
+                        <xsd:element minOccurs="0" ref="HazmatItemRef"/>
+                        <xsd:choice>
+                            <xsd:element ref="IntSavedQuery"/>
+                            <xsd:element ref="LineNumber"/>
+                        </xsd:choice>
+                        <xsd:element minOccurs="0" ref="ItemQuantity"/>
+                        <xsd:element minOccurs="0" ref="PackagedItemSpecRef"/>
+                        <xsd:element minOccurs="0" ref="PackagedItemSpecCount"/>
+                        <xsd:element minOccurs="0" ref="WeightVolumePerShipUnit"/>
+                        <xsd:element minOccurs="0" ref="CountPerShipUnit"/>
+                        <xsd:element minOccurs="0" ref="ReleaseGid"/>
+                        <xsd:element minOccurs="0" ref="ReleaseLineGid"/>
+                        <xsd:element minOccurs="0" ref="TransOrderGid"/>
+                        <xsd:choice minOccurs="0">
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element minOccurs="0" ref="InitialItemGid"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ItemAttributes"/>
+                                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="InvolvedParty"/>
+                            </xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element minOccurs="0" ref="TransOrderLineGid"/>
+                                <xsd:element minOccurs="0" ref="ReleaseInstrSeq"/>
+                                <xsd:element minOccurs="0" ref="NetWeightVolume"/>
+                                <xsd:element minOccurs="0" ref="SecondaryWeightVolume"/>
+                                <xsd:element minOccurs="0" ref="SecondaryNetWeightVolume"/>
+                            </xsd:sequence>
+                            <xsd:sequence minOccurs="0">
+                                <xsd:element minOccurs="0" ref="ReleaseShipUnitGid"/>
+                                <xsd:element minOccurs="0" ref="ReleaseShipUnitLineNumber"/>
+                                <xsd:element minOccurs="0" ref="ReceivedWeightVolume"/>
+                                <xsd:element minOccurs="0" ref="ReceivedPackageItemCount"/>
+                                <xsd:element minOccurs="0" ref="UserDefinedCommodityGid"/>
+                            </xsd:sequence>
+                        </xsd:choice>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ShipUnitLineRefnum"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Remark"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="LocationRole">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="LocationRoleGid"/>
+                        <xsd:element minOccurs="0" ref="CalendarGid"/>
+                        <xsd:element minOccurs="0" ref="XDockIsInboundBias"/>
+                        <xsd:element minOccurs="0" ref="FixedHandlingTime"/>
+                        <xsd:element minOccurs="0" ref="VarHandlingTime"/>
+                        <xsd:element minOccurs="0" ref="VarHandlingWeight"/>
+                        <xsd:element minOccurs="0" ref="MaxFreightIdleTime"/>
+                        <xsd:element minOccurs="0" ref="CreatePoolHandlingShipment"/>
+                        <xsd:element minOccurs="0" ref="CreateXDockHandlingShipment"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="LocationActivityTimeDef"/>
+                        <xsd:element minOccurs="0" ref="PctActivityBeforeLocOpen"/>
+                        <xsd:element minOccurs="0" ref="PctActivityAfterLocClose"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="LocationRoleGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CalendarGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="FixedStopTime">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Duration"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="VariableStopTime">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Duration"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="EquipmentGroupProfileGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Corporation">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" ref="CorporationName"/>
+                        <xsd:element minOccurs="0" ref="PickupRoutingSeqGid"/>
+                        <xsd:element minOccurs="0" ref="DropoffRoutingSeqGid"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="VatRegistration"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="VatProvincialRegistration"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CorporationName" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="LocationName" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ServiceProvider">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" ref="ScacGid"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ServiceProviderAlias"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ConditionalBookingProfile"/>
+                        <xsd:element minOccurs="0" ref="ModeProfileGid"/>
+                        <xsd:element minOccurs="0" ref="TenderResponseTime"/>
+                        <xsd:element minOccurs="0" ref="MatchRuleProfileGid"/>
+                        <xsd:element minOccurs="0" ref="MatchValidRuleProfileGid"/>
+                        <xsd:element minOccurs="0" ref="AutoApproveRuleProfileGid"/>
+                        <xsd:element minOccurs="0" ref="AutoPaymentFlag"/>
+                        <xsd:element minOccurs="0" ref="AllocationRuleProfileGid"/>
+                        <xsd:element minOccurs="0" ref="IsAllowTender"/>
+                        <xsd:element minOccurs="0" ref="IsDispatchByRegion"/>
+                        <xsd:element minOccurs="0" ref="RateServiceGid"/>
+                        <xsd:element minOccurs="0" ref="OutXmlProfileGid"/>
+                        <xsd:element minOccurs="0" ref="IsAcceptSpotBids"/>
+                        <xsd:element minOccurs="0" ref="IsAcceptBroadcastTenders"/>
+                        <xsd:element minOccurs="0" ref="IsAcceptCondBooking"/>
+                        <xsd:element minOccurs="0" ref="IsLocalizeBroadcastSpotContact"/>
+                        <xsd:element minOccurs="0" ref="SpotRateAdjustmentFactor"/>
+                        <xsd:element minOccurs="0" ref="InvoicingProcess"/>
+                        <xsd:element minOccurs="0" ref="IsCopyInvDeltaToShipment"/>
+                        <xsd:element minOccurs="0" ref="IsAcceptByShipUnit"/>
+                        <xsd:element minOccurs="0" ref="IsInternalNVOCC"/>
+                        <xsd:element minOccurs="0" ref="NVOCCDomainName"/>
+                        <xsd:element minOccurs="0" ref="LineApproveTolProfileGid"/>
+                        <xsd:element minOccurs="0" ref="IsMinority"/>
+                        <xsd:element minOccurs="0" ref="Incumbent"/>
+                        <xsd:element minOccurs="0" ref="Tier"/>
+                        <xsd:element minOccurs="0" ref="ScorecardValue"/>
+                        <xsd:element minOccurs="0" ref="EpaIndexValue"/>
+                        <xsd:element minOccurs="0" ref="BroadcastSpotContact"/>
+                        <xsd:element minOccurs="0" ref="EquipMarkList"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ServprovService"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ServprovModeInfo"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ServprovPolicy"/>
+                        <xsd:element minOccurs="0" ref="IsFleet"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Scac" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ModeProfileGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CommunicationMethod">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="ComMethodRank"/>
+                        <xsd:element ref="ComMethodGid"/>
+                        <xsd:element minOccurs="0" ref="CalendarGid"/>
+                        <xsd:element minOccurs="0" ref="ExpectedResponseTime"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ExpectedResponseTime">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Duration"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="RoutingRuleProfileGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ServiceProviderProfileGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ConditionalBookingProfile">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" ref="TransportModeGid"/>
+                        <xsd:element minOccurs="0" ref="ConditionalBookingProfileGid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ConditionalBookingProfileGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TimeWindow">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" ref="EarlyPickupDt"/>
+                        <xsd:element minOccurs="0" ref="LatePickupDt"/>
+                        <xsd:element minOccurs="0" ref="EarlyDeliveryDt"/>
+                        <xsd:element minOccurs="0" ref="LateDeliveryDt"/>
+                        <xsd:element minOccurs="0" ref="PickupIsAppt"/>
+                        <xsd:element minOccurs="0" ref="DeliveryIsAppt"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TransOrderGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ServiceProviderAliasValue" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="RateOfferingGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AirRailRouteCode" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="WeightVolume">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Weight"/>
+                        <xsd:element ref="Volume"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ShipmentGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ShipmentRefnum">             <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="ShipmentRefnumQualifierGid"/>
+                        <xsd:element ref="ShipmentRefnumValue"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="StopSequence" type="xsd:string">             <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Duration">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="DurationValue"/>
+                        <xsd:element ref="DurationUOMGid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="IsAppointment" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Release">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" ref="SendReason"/>
+                        <xsd:element minOccurs="0" ref="IntSavedQuery"/>
+                        <xsd:element ref="ReleaseGid"/>
+                        <xsd:element ref="TransactionCode"/>
+                        <xsd:element minOccurs="0" ref="ReplaceChildren"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="IntCommand"/>
+                        <xsd:element minOccurs="0" ref="TransOrderGid"/>
+                        <xsd:element minOccurs="0" ref="ReleaseHeader"/>
+                        <xsd:element minOccurs="0" ref="ShipFromLocationRef"/>
+                        <xsd:element minOccurs="0" ref="ShipFromLocOverrideRef"/>
+                        <xsd:element minOccurs="0" ref="ShipFromLoadPoint"/>
+                        <xsd:element minOccurs="0" ref="ShipToLocationRef"/>
+                        <xsd:element minOccurs="0" ref="ShipToLocOverrideRef"/>
+                        <xsd:element minOccurs="0" ref="ShipToUnloadPoint"/>
+                        <xsd:element minOccurs="0" ref="TimeWindow"/>
+                        <xsd:element minOccurs="0" ref="DeclaredValue"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ReleaseLine"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ShipUnit"/>
+                        <xsd:element minOccurs="0" ref="ReleaseTypeGid"/>
+                        <xsd:element minOccurs="0" ref="PlanFromLocationGid"/>
+                        <xsd:element minOccurs="0" ref="PlanFromLocOverrideRef"/>
+                        <xsd:element minOccurs="0" ref="PlanFromLoadPoint"/>
+                        <xsd:element minOccurs="0" ref="PlanToLocationGid"/>
+                        <xsd:element minOccurs="0" ref="PlanToLocOverrideRef"/>
+                        <xsd:element minOccurs="0" ref="PlanToUnloadPoint"/>
+                        <xsd:element minOccurs="0" ref="PriLegSourceLocationRef"/>
+                        <xsd:element minOccurs="0" ref="PriLegSourceLocOverrideRef"/>
+                        <xsd:element minOccurs="0" ref="PortOfLoadLocationRef"/>
+                        <xsd:element minOccurs="0" ref="PortOfLoadLocOverrideRef"/>
+                        <xsd:element minOccurs="0" ref="PortOfDisLocationRef"/>
+                        <xsd:element minOccurs="0" ref="PortOfDisLocOverrideRef"/>
+                        <xsd:element minOccurs="0" ref="PriLegDestLocationRef"/>
+                        <xsd:element minOccurs="0" ref="PriLegDestLocOverrideRef"/>
+                        <xsd:element minOccurs="0" ref="BulkPlanGid"/>
+                        <xsd:element minOccurs="0" ref="SellBulkPlanGid"/>
+                        <xsd:element minOccurs="0" ref="PlanPartitionGid"/>
+                        <xsd:element minOccurs="0" ref="BestDirectBuyCost"/>
+                        <xsd:element minOccurs="0" ref="BestDirectBuyRateOfferingGid"/>
+                        <xsd:element minOccurs="0" ref="BestDirectSellCost"/>
+                        <xsd:element minOccurs="0" ref="BestDirectSellRateOfferingGid"/>
+                        <xsd:element minOccurs="0" ref="BuyGeneralLedgerGid"/>
+                        <xsd:element minOccurs="0" ref="SellGeneralLedgerGid"/>
+                        <xsd:element minOccurs="0" ref="TotalWeightVolume"/>
+                        <xsd:element minOccurs="0" ref="TotalNetWeightVolume"/>
+                        <xsd:element minOccurs="0" ref="TotalPackagedItemSpecCount"/>
+                        <xsd:element minOccurs="0" ref="TotalPackagedItemCount"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ReleaseRefnum"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ReleaseStatus"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Remark"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="REquipment"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="InvolvedParty"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="CommercialInvoice"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Text"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ReleaseService"/>
+                        <xsd:element minOccurs="0" ref="ReleaseShipmentInfo"/>
+                        <xsd:element minOccurs="0" ref="ReleaseAllocationInfo"/>
+                        <xsd:element minOccurs="0" ref="TransOrder"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="OrStop"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="OrderMovement"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ReleaseGid">
+                <xsd:annotation></xsd:annotation>               <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ReleaseLine">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="ReleaseLineGid"/>
+                        <xsd:element minOccurs="0" ref="PackagedItemRef"/>
+                        <xsd:element minOccurs="0" ref="InitialItemGid"/>
+                        <xsd:element minOccurs="0" ref="ItemQuantity"/>
+                        <xsd:element minOccurs="0" ref="PackageDimensions"/>
+                        <xsd:element minOccurs="0" ref="ManufacturedCountryCode3Gid"/>
+                        <xsd:element minOccurs="0" ref="IsDrawback"/>
+                        <xsd:element minOccurs="0" ref="PackagedItemSpecRef"/>
+                        <xsd:element minOccurs="0" ref="PackagedItemSpecCount"/>
+                        <xsd:element minOccurs="0" ref="NumLayersPerShipUnit"/>
+                        <xsd:element minOccurs="0" ref="QuantityPerLayer"/>
+                        <xsd:element minOccurs="0" ref="TransportHandlingUnitRef"/>
+                        <xsd:element minOccurs="0" ref="BuyGeneralLedgerGid"/>
+                        <xsd:element minOccurs="0" ref="SellGeneralLedgerGid"/>
+                        <xsd:element minOccurs="0" ref="CommercialInvoiceGid"/>
+                        <xsd:element minOccurs="0" ref="CommercialInvoiceDesc"/>
+                        <xsd:element minOccurs="0" ref="SecondaryWeightVolume"/>
+                        <xsd:element minOccurs="0" ref="ReleaseLineHazmatInfo"/>
+                        <xsd:element minOccurs="0" ref="BilledQuantity"/>
+                        <xsd:element minOccurs="0" ref="PricePerUnit"/>
+                        <xsd:element minOccurs="0" ref="TotalBilledAmount"/>
+                        <xsd:element minOccurs="0" ref="FreeAlongSide"/>
+                        <xsd:element minOccurs="0" ref="BrandName"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ItemAttributes"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Refnum"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Remark"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="InvolvedParty"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ExportLicenseInfo"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ReleaseLineIntlClassification"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ReleaseLineLoadConfig"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Text"/>
+                        <xsd:element minOccurs="0" ref="ReleaseLineAllocationInfo"/>                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ShipmentRefnumQualifierGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ShipmentRefnumValue" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="PaymentDetail">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="PaymentDetailNumber"/>
+                        <xsd:element ref="PaymentDetailQualifierGid"/>
+                        <xsd:element ref="PaymentDetailValue"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="PaymentDetailQualifierGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="PaymentDetailValue">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="FinancialAmount"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="BillableAmount">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="FinancialAmount"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="IsHazardous" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="StopCount" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="EquipmentGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ISOEquipmentTypeCode" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TotalWeightVolume">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="WeightVolume"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TareWeight">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Weight"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Dunnage">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Weight"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="EquipmentName" type="xsd:string">                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="EquipmentOwner" type="xsd:string">
+                <xsd:annotation></xsd:annotation>           </xsd:element>
+            <xsd:element name="OwnerType" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="EquipmentDescriptionCode" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="WeightValue" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="VolumeValue" type="xsd:string">              <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="LengthValue" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="HeightValue" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="WidthValue" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Temperature">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="TemperatureValue"/>
+                        <xsd:element ref="TemperatureUOMGid"/>                  </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TemperatureValue" type="xsd:string">
+                <xsd:annotation></xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TemperatureUOMGid">
+                <xsd:annotation></xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="Gid"/>
+                    </xsd:sequence>             </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>       </types>        </definitions>

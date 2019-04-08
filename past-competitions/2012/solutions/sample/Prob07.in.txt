@@ -1,0 +1,33 @@
+10
+O O O O =
+O = O O O
+O O O O =
+= O O O O
+= O O O O
+O = O O O
+O O = O O
+O O O = O
+O = O O O
+O O O O =
+STUDENT 12
+O = O O =
+O = O O O
+O O O O =
+= O O O O
+= O O O O
+O = O O O
+O O = O O
+O O O = O
+O = O O O
+O O O O =
+STUDENT 13
+O O O O =
+O = O O O
+O O O O =
+= O O O O
+O O O = O
+O = O O O
+O O = O O
+O O O = O
+O = O O O
+O = O O O

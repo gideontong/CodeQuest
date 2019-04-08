@@ -1,0 +1,6 @@
+plastic cup
+mobilePhone
+CoffeeMachine
+large software book
+whiteSheetOfPaper()
+picture frame

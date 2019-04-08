@@ -1,0 +1,11 @@
+10
+R S
+R P R R
+R P S
+P S P S P R P S S R
+P P P
+S R S S S S S S S S S S S S S S S S
+P R
+R S R
+S P P
+S S

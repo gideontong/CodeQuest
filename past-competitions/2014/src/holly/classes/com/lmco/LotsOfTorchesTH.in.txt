@@ -1,0 +1,19 @@
+-------------------------------------------
+|xt      xxxx   xxx  xxxxt     t t t tTxxx|
+|xxxxx        xx             txxxxt   xx  |
+|xxxxxxx   x       xxxxxxxxt     xxxxxx   |
+|xxxx  xx    xx   t t t t  xxxxxxxxxt     |
+|xt        xxt  t xxxxt          xxxxxxx  |
+|xxxxx   xxxxxt   xxxxxxxxx               |
+|xxx       t  xx             xxxxxxxxxxt  |
+|xxxxxxxxxxxx        xx  xxxx       xxxx  |
+|   xt     t      xx t        xxxxx       |
+|    x     t    xxxx xxxxxx        xxxx   |
+|xxxxxxx   t                     xxxxx    |
+|t         t xxxxxxx    xxxxxxxxxxxxxxxxx |
+|xxx   xxxxt           xxt    xxx    xxxx |
+|xxxx   xx txxxx  x xxxxx                 |
+|xx     x  t                xxx       xxx |
+|xxxx      t xxxxxt    xx                t|
+|xxx    H xxxxxx   xx  xxxxxxxxxxxxxxxxxxx|
+-------------------------------------------

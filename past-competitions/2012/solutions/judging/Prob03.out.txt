@@ -1,0 +1,11 @@
+The numbers are in random order
+The numbers are in ascending order
+The numbers are in descending order
+The input was invalid
+The numbers are in random order
+The input was invalid
+The input was invalid
+The input was invalid
+The numbers are in ascending order
+The input was invalid
+The input was invalid

@@ -1,0 +1,12 @@
+No colors need to be mixed to make red.
+In order to make red-violet, blue and red must be mixed.
+In order to make violet, blue and red must be mixed.
+In order to make blue-violet, blue and red must be mixed.
+No colors need to be mixed to make blue.
+In order to make blue-green, blue and yellow must be mixed.
+In order to make green, blue and yellow must be mixed.
+In order to make yellow-green, blue and yellow must be mixed.
+No colors need to be mixed to make yellow.
+In order to make yellow-orange, red and yellow must be mixed.
+In order to make orange, red and yellow must be mixed.
+In order to make red-orange, red and yellow must be mixed.
